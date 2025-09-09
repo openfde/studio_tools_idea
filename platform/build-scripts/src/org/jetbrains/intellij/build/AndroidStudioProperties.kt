@@ -41,13 +41,13 @@ class AndroidStudioProperties(home: Path) : BaseIdeaProperties() {
       "intellij.vcs.github.community",
       // Android Studio: package CIDR plugins. This list is based on what we have been shipping in Android Studio
       // and the structure of CIDR plugins.
-      "intellij.c.clangd.plugin",
-      "intellij.c.clangdBridge.plugin",
-      "intellij.c.plugin",
-      "intellij.cidr.debugger.plugin",
-      "intellij.cidr.base.plugin",
-      "intellij.cidr.clangConfig.plugin",
-      "intellij.cidr.clangFormat.plugin",
+      //"intellij.c.clangd.plugin",
+      //"intellij.c.clangdBridge.plugin",
+      //"intellij.c.plugin",
+      //"intellij.cidr.debugger.plugin",
+      //"intellij.cidr.base.plugin",
+      //"intellij.cidr.clangConfig.plugin",
+      //"intellij.cidr.clangFormat.plugin",
     )
 
     // EAP-only plugins are generally intended for JetBrains' products only. We always exclude them from Android Studio.
@@ -115,10 +115,10 @@ class AndroidStudioProperties(home: Path) : BaseIdeaProperties() {
       layout.withModule("intellij.platform.structuralSearch")
 
       layout.withModule("intellij.android.adt.branding", "resources.jar")
-      layout.withModule("intellij.cidr.common.testFramework.core", TEST_FRAMEWORK_JAR)
-      layout.withModule("intellij.cidr.common.testFramework.core.nolang", TEST_FRAMEWORK_JAR)
-      layout.withProjectLibrary("assertJ", TEST_FRAMEWORK_JAR) // Used by the CIDR test framework (b/295336541).
-      layout.withProjectLibrary("hamcrest", TEST_FRAMEWORK_JAR) // Used by the CIDR test framework (b/295336541).
+      //layout.withModule("intellij.cidr.common.testFramework.core", TEST_FRAMEWORK_JAR)
+      //layout.withModule("intellij.cidr.common.testFramework.core.nolang", TEST_FRAMEWORK_JAR)
+      //layout.withProjectLibrary("assertJ", TEST_FRAMEWORK_JAR) // Used by the CIDR test framework (b/295336541).
+      //layout.withProjectLibrary("hamcrest", TEST_FRAMEWORK_JAR) // Used by the CIDR test framework (b/295336541).
 
       // Move kotlinx-coroutines-guava to core, making it accessible to the Android plugin.
       // Note: we could bundle kotlinx-coroutines-guava in the Android plugin separately, but that's risky because (1) the library
@@ -133,7 +133,7 @@ class AndroidStudioProperties(home: Path) : BaseIdeaProperties() {
 
       // b/376902207: JetBrains apparently converted rml.dfa into a product module in CIDR commit 0f8319e82a.
       // Note that there is an associated V2 module rml.dfa.impl referenced from AndroidStudioPlugin.xml.
-      layout.withModule("intellij.rml.dfa")
+      //layout.withModule("intellij.rml.dfa")
 
       layout.withPatch { patcher, context ->
         // Patch AndroidStudioProperties.xml: set the platform API version to match the 3-component
@@ -160,7 +160,7 @@ class AndroidStudioProperties(home: Path) : BaseIdeaProperties() {
     productLayout.pluginLayouts = inheritedPluginLayouts.addAll(listOf(
       JavaPluginLayout.javaPlugin(),
       CommunityRepositoryModules.groovyPlugin(),
-      plugin("intellij.cidr.debugger.plugin") { spec ->
+      /*plugin("intellij.cidr.debugger.plugin") { spec ->
         spec.withModule("intellij.nativeDebug", spec.mainJarName)
         spec.withModule("intellij.cidr.debugger", spec.mainJarName)
         spec.withModule("intellij.cidr.debugger.backend", spec.mainJarName)
@@ -213,7 +213,7 @@ class AndroidStudioProperties(home: Path) : BaseIdeaProperties() {
       plugin("intellij.cidr.clangFormat.plugin") { spec ->
         spec.withModule("intellij.cidr.clangFormat")
         spec.withModule("intellij.cidr.clangFormat.lang")
-      },
+      },*/
     ))
 
     // IntelliJ normally excludes the DevKit plugin from public builds, but we need it for ASwB development purposes (b/308477340).
@@ -229,6 +229,7 @@ class AndroidStudioProperties(home: Path) : BaseIdeaProperties() {
     FileSet(context.paths.communityHomeDir.resolve("build/conf/ideaCE/common/bin"))
       .includeAll()
       .copyToDir(targetDir.resolve("bin"))
+/*
     FileSet(context.paths.communityHomeDir.resolve("../../tools/vendor/intellij/cidr/cidr-debugger/bin/lldb/helpers"))
       .includeAll()
       .copyToDir(targetDir.resolve("bin/lldb/helpers"))
@@ -246,7 +247,7 @@ class AndroidStudioProperties(home: Path) : BaseIdeaProperties() {
     FileSet(context.paths.communityHomeDir)
       .include("CIDR_LICENSE.txt")
       .copyToDir(targetDir.resolve("plugins/cidr-base-plugin/lib/LICENSE.txt"))
-
+*/
     return super.copyAdditionalFiles(context, targetDir)
   }
 
