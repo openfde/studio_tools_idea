@@ -1,0 +1,7 @@
+// "Add 'operator' modifier" "true"
+// TOOL: org.jetbrains.kotlin.idea.inspections.AddOperatorModifierInspection
+// IGNORE_K2
+
+expect class Foo {
+    fun <caret>unaryMinus()
+}

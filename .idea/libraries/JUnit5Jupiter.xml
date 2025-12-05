@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="JUnit5Jupiter" type="repository">
+    <properties include-transitive-deps="false" maven-id="org.junit.jupiter:junit-jupiter-engine:5.11.0">
+      <verification>
+        <artifact url="file://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-engine/5.11.0/junit-jupiter-engine-5.11.0.jar">
+          <sha256sum>7012423383d0c79d0347c5cf2bd1996c30a12240fb729e0cdfa954852ec693cc</sha256sum>
+        </artifact>
+      </verification>
+    </properties>
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-engine/5.11.0/junit-jupiter-engine-5.11.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-engine/5.11.0/junit-jupiter-engine-5.11.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

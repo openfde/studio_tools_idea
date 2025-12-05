@@ -1,0 +1,8 @@
+0(1) element: null
+1(2) element: PyWhileStatement
+2(3) READ ACCESS: True
+3(4) element: PyStatementList. Condition: True:true
+4(1) element: PyPassStatement
+5(6) element: PyElsePart. Condition: True:false
+6(7) element: PyPrintStatement
+7() element: null

@@ -1,0 +1,44 @@
+<!--
+  ~ Copyright 2000-2013 JetBrains s.r.o.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<component xmlns="http://jetbrains.org/intellij/schema/application-info"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://jetbrains.org/intellij/schema/application-info http://jetbrains.org/intellij/schema/ApplicationInfo.xsd">
+  <version major="2024" minor="3" micro="0" patch="0" full="dev build" suffix="" eap="false"/>
+  <company name="Google" url="http://developer.android.com"/>
+  <build number="AI-__BUILD__" date="__BUILD_DATE__" majorReleaseDate="20250501"/>
+  <logo url="/artwork/studio_splash.png"/>
+  <icon svg="/artwork/androidstudio.svg" svg-small="/artwork/androidstudio-small.svg" ico="artwork/androidstudio.ico"/>
+  <icon-eap svg="/artwork/preview/androidstudio.svg" svg-small="/artwork/preview/androidstudio-small.svg"/>
+  <names product="Studio" fullname="Android Studio" script="studio"/> <!-- fullname is used by NPW to show default folder for projects as -->
+  <essential-plugin>com.intellij.java</essential-plugin>
+  <essential-plugin>com.intellij.java.ide</essential-plugin>
+  <essential-plugin>org.jetbrains.android</essential-plugin>
+  <essential-plugin>com.android.tools.design</essential-plugin>
+  <!-- Workaround for https://youtrack.jetbrains.com/issue/IJPL-6075: mark all dependencies of essential plugins as essential. -->
+  <essential-plugin>com.android.tools.gradle.dcl</essential-plugin>
+  <essential-plugin>com.android.tools.idea.smali</essential-plugin>
+  <essential-plugin>com.intellij.gradle</essential-plugin>
+  <essential-plugin>com.intellij.modules.json</essential-plugin>
+  <essential-plugin>com.intellij.platform.images</essential-plugin>
+  <essential-plugin>com.intellij.properties</essential-plugin>
+  <essential-plugin>intellij.webp</essential-plugin>
+  <essential-plugin>JUnit</essential-plugin>
+  <essential-plugin>org.intellij.groovy</essential-plugin>
+  <essential-plugin>org.intellij.intelliLang</essential-plugin>
+  <essential-plugin>org.jetbrains.kotlin</essential-plugin>
+  <essential-plugin>org.jetbrains.plugins.gradle</essential-plugin>
+  <essential-plugin>org.toml.lang</essential-plugin>
+</component>
